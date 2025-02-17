@@ -3,9 +3,6 @@
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-// [演習による変更]HttpContext へのアクセスを登録する
-builder.Services.AddHttpContextAccessor();
-
 // 保存先をDBにする
 builder.Services.AddDbContext<TFAppContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TFAppContext")));
@@ -20,18 +17,21 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.InstanceName = builder.Environment.EnvironmentName.ToLower();
 });
 
-// [演習による変更]HTTPクライアントを登録する
-builder.Services.AddHttpClient("weather", httpClient =>
-{
-    httpClient.BaseAddress = new Uri("https://fnappdf4khwh57ruqq.azurewebsites.net/");
-});
-
 // セッションの設定
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(5);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+});
+
+// [演習による変更]HttpContext へのアクセスを登録する
+builder.Services.AddHttpContextAccessor();
+
+// [演習による変更]HTTPクライアントを登録する
+builder.Services.AddHttpClient("weather", httpClient =>
+{
+    httpClient.BaseAddress = new Uri("https://fnappdf4khwh57ruqq.azurewebsites.net/");
 });
 
 var app = builder.Build();
