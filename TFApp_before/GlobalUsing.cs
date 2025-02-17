@@ -5,5 +5,7 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Mvc.RazorPages;
 global using Microsoft.EntityFrameworkCore;
 
+global using Microsoft.Extensions.Caching.StackExchangeRedis;
+
 global using TFApp.Data;
 global using TFApp.Models;
