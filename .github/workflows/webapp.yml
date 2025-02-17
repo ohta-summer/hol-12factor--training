@@ -65,7 +65,9 @@ jobs:
         with:
           app-name: ${{ env.APP_SERVICE_NAME }}
           slot-name: 'staging'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_STAGING }}
+          #slot-name: 'production'
+          #publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
           package: .
       # azコマンドを実行するための認証（OIDCでのワークフローを実装している場合、既に行っている azure/login のみで良い）
       - uses: azure/login@v1
