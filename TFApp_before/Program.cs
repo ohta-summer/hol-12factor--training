@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.StackExchangeRedis;
+using Microsoft.Extensions.Caching;
 
 var builder = WebApplication.CreateBuilder(args);
 
