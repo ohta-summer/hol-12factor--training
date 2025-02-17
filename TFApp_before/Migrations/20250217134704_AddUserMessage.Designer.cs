@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TFApp.Data;
 
@@ -10,9 +11,11 @@ using TFApp.Data;
 namespace TFApp.Migrations
 {
     [DbContext(typeof(TFAppContext))]
-    partial class TFAppContextModelSnapshot : ModelSnapshot
+    [Migration("20250217134704_AddUserMessage")]
+    partial class AddUserMessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
