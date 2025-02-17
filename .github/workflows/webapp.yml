@@ -71,10 +71,6 @@ jobs:
           package: .
       # azコマンドを実行するための認証（OIDCでのワークフローを実装している場合、既に行っている azure/login のみで良い）
       - uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       # スワップの実行
       - name: Swap slots
