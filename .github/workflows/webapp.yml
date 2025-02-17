@@ -9,7 +9,7 @@ on:
 env:
   APP_SERVICE_NAME: 'g-12fa-webpp-oota' # Azure Web Appsのリソース名を入れてください
   ACCOUNT_NAME: 'ohta-summer' # GitHubのアカウント名を入れてください
-  RESOURCE_GROUP: 'g-12fa-webpp-oota' # Azure Web Appsリソースグループ名
+  RESOURCE_GROUP: 'g-12fa-oota' # Azure Web Appsリソースグループ名
 
 jobs:
   # .NET8 Webアプリのビルド
