@@ -44,7 +44,7 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-  # AzureWeb Appsへのデプロイ
+  # AzureWeb Appsへのデプロイ!
   deploy:
     runs-on: ubuntu-latest
     needs: build
